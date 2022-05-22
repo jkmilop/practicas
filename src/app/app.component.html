@@ -1,9 +1,75 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="containel">
-<app-nav></app-nav>
-<app-imagenes></app-imagenes>
-<app-campos></app-campos>
-<app-iconos></app-iconos>
-</div>g
+<div class="formularioRegistro">
+  <h2>Crear Estudiante</h2>
+  <form [formGroup]="personaForm" (ngSubmit)="guardar()">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Apellido</label>
+      <input type="text" formControlName="apellido" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>telefono</label>
+      <input type="number" formControlName="telefono" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>facultad</label>
+      <select name="facultad" id="facultad" formControlName="facultad" class="form-control">
+        <option [ngValue]="item" *ngFor="let item of facultades">{{item.nombre}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Programa o Carrera</label>
+      <select name="programa" id="programa" formControlName="programa" class="form-control">
+        <option [ngValue]="item" *ngFor="let item of programas">{{item.nombre}}</option>
+      </select>
+    </div>
 
 
+    <button type="submit" class="btn btn-primary" [disabled]="personaForm.invalid">Guardar</button>
+
+  </form>
+</div>
+
+<div class="formularioRegistro">
+<h2>Personas registradas</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>codigo</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>telefono</th>
+        <th>facultad</th>
+        <th>programa</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of personas">
+        <th>{{item.codigo}}</th>
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.telefono}}</td>
+        <td>{{item.facultad.nombre}}</td>
+        <td>{{item.programa.nombre}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="editar(item)">Editar</button>
+          <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>

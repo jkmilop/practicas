@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eI": {
+    "conecc": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/e-i",
+            "outputPath": "dist/conecc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,18 +26,15 @@
               "src/favicon.ico",
               "src/assets"
             ],
-
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
-          },
+            ]          },
           "configurations": {
             "production": {
               "budgets": [
@@ -75,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "eI:build:production"
+              "browserTarget": "conecc:build:production"
             },
             "development": {
-              "browserTarget": "eI:build:development"
+              "browserTarget": "conecc:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eI:build"
+            "browserTarget": "conecc:build"
           }
         },
         "test": {
@@ -109,5 +106,5 @@
       }
     }
   },
-  "defaultProject": "eI"
+  "defaultProject": "conecc"
 }
