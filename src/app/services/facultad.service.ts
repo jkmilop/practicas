@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FacultadService {
 
-  private API_SERVER = "http://localhost:8080/facultad/";
+  private API_SERVER = "http://localhost:8080/facultad";
 
   constructor(
     private httpClient: HttpClient

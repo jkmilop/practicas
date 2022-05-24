@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProgramaService {
 
-  private API_SERVER = "http://localhost:8080/programa/";
+  private API_SERVER = "http://localhost:8080/programa";
 
   constructor(
     private httpClient: HttpClient
