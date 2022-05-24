@@ -36,6 +36,9 @@ export class AppComponent implements OnInit {
       correo: ['', Validators.required],
       periodoAspira: ['', Validators.required],
       telefono: ['', Validators.required],
+      facultad: ['', Validators.required],
+      programa: ['', Validators.required],
+
     });
 
     this.facultadService.obtenerFacultad().subscribe(
