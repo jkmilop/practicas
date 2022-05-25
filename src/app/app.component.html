@@ -1,48 +1,52 @@
 <div class="formularioRegistro">
-  <h2>Crear Estudiante</h2>
-  <form [formGroup]="personaForm" (ngSubmit)="guardar()">
-    <div class="form-group">
-      <label>Nombre</label>
-      <input type="text" formControlName="nombre" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Apellido</label>
-      <input type="text" formControlName="apellido" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Telefono</label>
-      <input type="number" formControlName="telefono" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Correo</label>
-      <input type="email" formControlName="correo" class="form-control">
-    </div>
-    <div class="form-group">
+  <div class="login">
+    <h2 class="text-center">Crear Estudiante</h2>
+    <form [formGroup]="personaForm" (ngSubmit)="guardar()">
       <div class="form-group">
-        <label>Periodo al que aspira</label>
-        <input type="text" formControlName="periodoAspira" class="form-control">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <input type="number" formControlName="telefono" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Correo</label>
+        <input type="email" formControlName="correo" class="form-control">
+      </div>
+      <div class="form-group">
+        <div class="form-group">
+          <label>Periodo al que aspira</label>
+          <input type="text" formControlName="periodoAspira" class="form-control">
+        </div>
+
+        <label>Facultad</label>
+        <select name="facultad" id="facultad" formControlName="facultad" class="form-control">
+          <option [ngValue]="item" *ngFor="let item of facultades">{{item.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Programa o Carrera</label>
+        <select name="programa" id="programa" formControlName="programa" class="form-control">
+          <option [ngValue]="item" *ngFor="let item of programas">{{item.nombre}}</option>
+        </select>
       </div>
 
-      <label>Facultad</label>
-      <select name="facultad" id="facultad" formControlName="facultad" class="form-control">
-        <option [ngValue]="item" *ngFor="let item of facultades">{{item.nombre}}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Programa o Carrera</label>
-      <select name="programa" id="programa" formControlName="programa" class="form-control">
-        <option [ngValue]="item" *ngFor="let item of programas">{{item.nombre}}</option>
-      </select>
-    </div>
 
+      <button type="submit" class="btn btn-primary btn-success w-100" [disabled]="personaForm.invalid">Guardar</button>
 
-    <button type="submit" class="btn btn-primary" [disabled]="personaForm.invalid">Guardar</button>
+    </form>
+  </div>
 
-  </form>
 </div>
 
-<div class="formularioRegistro">
-<h2>Personas registradas</h2>
+<div class="consola">
+  <h2>Personas registradas</h2>
+  <br>
   <table class="table">
     <thead>
       <tr>
