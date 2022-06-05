@@ -14,8 +14,8 @@ export class FacultadService {
   ) { }
 
 
-  public obtenerFacultad(): Observable<any>{
-    return this.httpClient.get(this.API_SERVER);
+  public guardarFacultad(facultad:any): Observable<any>{
+    return this.httpClient.post(this.API_SERVER,facultad);
   }
 
 }

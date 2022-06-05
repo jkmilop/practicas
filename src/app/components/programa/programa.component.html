@@ -1,0 +1,42 @@
+<div class="formularioRegistro">
+  <div class="login">
+    <h2 class="text-center">Crear Programa</h2>
+    <form [formGroup]="programaForm" (ngSubmit)="guardar()">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Estado</label>
+        <input type="text" formControlName="estado" class="form-control">
+      </div>
+
+
+
+      <button type="submit" class="btn btn-primary btn-success w-100" [disabled]="programaForm.invalid">Guardar</button>
+
+    </form>
+  </div>
+
+</div>
+
+<div class="consola">
+  <h2>Programa registradas</h2>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+      </tr>
+      <tr>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of estudiantes">
+        <td>{{item.nombre}}</td>
+        <td>{{item.estado}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

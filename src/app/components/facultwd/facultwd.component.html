@@ -1,0 +1,36 @@
+<div class="formularioRegistro">
+  <div class="login">
+    <h2 class="text-center">Crear Facultad</h2>
+    <form [formGroup]="facultadForm" (ngSubmit)="guardar()">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control">
+      </div>
+
+
+
+      <button type="submit" class="btn btn-primary btn-success w-100" [disabled]="facultadForm.invalid">Guardar</button>
+
+    </form>
+  </div>
+
+</div>
+
+<div class="consola">
+  <h2>Facultades registradas</h2>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of estudiantes">
+        <td>{{item.nombre}}</td>
+        <td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
