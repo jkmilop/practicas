@@ -10,6 +10,12 @@ import { ProgramaComponent } from './components/programa/programa.component';
 import { FacultwdComponent } from './components/facultwd/facultwd.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { RolComponent } from './components/rol/rol.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -19,6 +25,7 @@ import { RolComponent } from './components/rol/rol.component';
     FacultwdComponent,
     UsuarioComponent,
     RolComponent,
+    HomeComponent,
 
   ],
   imports: [
@@ -27,7 +34,16 @@ import { RolComponent } from './components/rol/rol.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
