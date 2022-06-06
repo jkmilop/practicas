@@ -14,5 +14,9 @@ export class RolService {
   public obtenerUsuarioRol(): Observable<any>{
     return this.httpClient.get(this.API_SERVER);
   }
+  public guardarUsuarioRol(usuario:any): Observable<any>{
+    return this.httpClient.post(this.API_SERVER,usuario);
+  }
+
 
 }

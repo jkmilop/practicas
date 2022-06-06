@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ProgramaComponent } from './components/programa/programa.component';
 import { FacultwdComponent } from './components/facultwd/facultwd.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { RolComponent } from './components/rol/rol.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
     ProgramaComponent,
     FacultwdComponent,
     UsuarioComponent,
+    RolComponent,
 
   ],
   imports: [
