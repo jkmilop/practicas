@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProgramaComponent } from './components/programa/programa.component';
 import { FacultwdComponent } from './components/facultwd/facultwd.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FacultwdComponent } from './components/facultwd/facultwd.component';
     AppComponent,
     ProgramaComponent,
     FacultwdComponent,
+    UsuarioComponent,
 
   ],
   imports: [

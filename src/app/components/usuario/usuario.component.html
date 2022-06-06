@@ -1,0 +1,52 @@
+<div class="formularioRegistro">
+  <div class="login">
+    <h2 class="text-center">Crear Usuario</h2>
+    <form [formGroup]="usuarioForm" (ngSubmit)="guardar()">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <input type="number" formControlName="telefono" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Correo</label>
+        <input type="email" formControlName="correo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Rol</label>
+        <select name="rol" id="rol" formControlName="rol" class="form-control">
+          <option [ngValue]="item" *ngFor="let item of roles">{{item.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Programa</label>
+        <select name="programa" id="programa" formControlName="programa" class="form-control">
+          <option [ngValue]="item" *ngFor="let item of programas">{{item.nombre}}</option>
+        </select>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary btn-success w-100" [disabled]="usuarioForm.invalid">Guardar</button>
+
+    </form>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>

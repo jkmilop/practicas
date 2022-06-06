@@ -17,5 +17,8 @@ export class ProgramaService {
   public guardarPrograma(programa:any): Observable<any>{
     return this.httpClient.post(this.API_SERVER,programa);
   }
+  public obtenerPrograma(): Observable<any>{
+    return this.httpClient.get(this.API_SERVER);
+  }
 
 }
